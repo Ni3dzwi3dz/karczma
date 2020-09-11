@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}
+Dodaj sesję
+{% endblock %}
+
+{% block script %}
+ <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="{{ url_for('static', filename='js/jquery-ui.multidatespicker.js') }}"></script>
+  <script>
+  $( function() {
+    $( "#datepicker" ).multiDatesPicker({minDate: 0, dateFormat : "DD, d MM, yy"});
+    
+  } );
+  </script>
+ {% endblock %}
+ 
+ {% block content %}
+ 
+ <form action="" method="POST" enctype=enctype="multipart/form-data">
+	
+	
+	<div class="form">
+		{{ form.hidden_tag() }}
+		{{ form.title.label }} <br>
+		{{ form.title(size=40)}}<br>
+		{{ form.game.label }} <br>
+		{{ form.game(size=40)}}<br>
+		{{ form.max_players.label }} <br>
+		{{ form.max_players(size=40)}}<br>
+		{{ form.description.label }} <br>
+		{{ form.description(size=40)}}<br>
+		{{ form.dates.label }} <br>
+		{{ form.dates(size=40 , id='datepicker')}}<br>
+		<button type="submit"> Dodaj</button>
+	</div>
+ </form>
+ {% endblock %}

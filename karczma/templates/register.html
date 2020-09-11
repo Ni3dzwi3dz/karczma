@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Zarejestruj się
+{% endblock title %}
+
+{% block content %}
+<form action="" method="POST" enctype=enctype="multipart/form-data">
+	
+	
+	<div class="form">
+		{{ form.hidden_tag() }}
+		{{ form.username.label }} <br>
+		{{ form.username(size=40)}}<br>
+		{{ form.email.label }} <br>
+		{{ form.email(size=80)}}<br>
+		{{ form.password.label }} <br>
+		{{ form.password(size=40)}}<br>
+		{{ form.password2.label }} <br>
+		{{ form.password2(size=40)}}<br>
+		<button type="submit"> Dodaj</button>
+	</div>
+ </form>
+{% endblock content %}
